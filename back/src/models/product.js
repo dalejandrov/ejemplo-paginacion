@@ -3,35 +3,24 @@ import db from '../config/database.js';
 
 export default class Product {
   static async getAllProducts() {
-    try {
-      const query = 'SELECT * FROM products';
-      const result = await db.query(query);
-      // console.log(await result);
-      return result;
-    } catch (error) {
-      throw new Error('Error retrieving products');
-    }
+
+    const query = 'SELECT * FROM products';
+    const result = await db.query(query);
+    console.log(await result);
+    return result;
   }
 
   static async getProductById(productId) {
-    try {
-      const query = 'SELECT * FROM products WHERE id = $1';
-      const result = await db.query(query, [productId]);
-      return result;
-    } catch (error) {
-      throw new Error('Error retrieving product');
-    }
+    const query = 'SELECT * FROM products WHERE id = $1';
+    const result = await db.query(query, [productId]);
+    return result;
   }
 
   static async createProduct(productData) {
-    try {
-      const { name, price, image } = productData;
-      const query = 'INSERT INTO products (name, description, price, image) VALUES ($1, $2, $3, $4) RETURNING *';
-      const result = await db.query(query, [name, description, price, image]);
-      return result;
-    } catch (error) {
-      throw new Error('Error creating product');
-    }
+    const { name, price, image } = productData;
+    const query = 'INSERT INTO products (name, description, price, image) VALUES ($1, $2, $3, $4) RETURNING *';
+    const result = await db.query(query, [name, description, price, image]);
+    return result;
   }
 }
 

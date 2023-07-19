@@ -1,4 +1,3 @@
-// services/productService.js
 import Product from '../models/product.js';
 
 export default class ProductService {
@@ -6,7 +5,7 @@ export default class ProductService {
     try {
       return await Product.getAllProducts();
     } catch (error) {
-      throw new Error('Error retrieving products');
+      throw new Error('Error al obtener los productos');
     }
   }
 
@@ -14,7 +13,7 @@ export default class ProductService {
     try {
       return await Product.getProductById(productId);
     } catch (error) {
-      throw new Error('Error retrieving product');
+      throw new Error(`Error al obtener el producto ${productId}`);
     }
   }
 
@@ -22,7 +21,7 @@ export default class ProductService {
     try {
       return await Product.createProduct(productData);
     } catch (error) {
-      throw new Error('Error creating product');
+      throw new Error('Error al crear producto');
     }
   }
 }
