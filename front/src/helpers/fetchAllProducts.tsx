@@ -3,7 +3,7 @@ import { FetchAllProductsResponse, Products } from '../interfaces/fetchAllProduc
 
 export const fetchAllProducts = async (): Promise<Products[]> => {
   const resp = await productsApi.get<FetchAllProductsResponse>('/products');
-  console.log(resp.data.products);
+  // console.log(resp.data.products);
 
   return resp.data.products;
 }

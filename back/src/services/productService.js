@@ -1,6 +1,18 @@
 import Product from '../models/product.js';
 
 export default class ProductService {
+
+  // static async getAllProducts(page, pageSize) {
+  //   try {
+  //     const products = await Product.getAllProducts(page, pageSize);
+  //     return products;
+  //   } catch (error) {
+  //     console.error('Error al obtener los productos', error);
+  //     throw new Error('Error al obtener los productos');
+  //   }
+  // }
+
+  // ! Sin cache
   static async getAllProducts() {
     try {
       return await Product.getAllProducts();

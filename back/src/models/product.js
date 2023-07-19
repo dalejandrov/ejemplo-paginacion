@@ -1,12 +1,24 @@
 // import { faker } from '@faker-js/faker';
+import { createClient } from 'redis';
 import db from '../config/database.js';
 
+const client = createClient();
+
+await client.connect();
+
 export default class Product {
+
   static async getAllProducts() {
 
-    const query = 'SELECT * FROM products';
-    const result = await db.query(query);
-    console.log(await result);
+    let value = await client.get('products');
+    if (!value) {
+      const query = 'SELECT * FROM products';
+      const result = await db.query(query);
+      value = JSON.stringify(result);
+      await client.set('products', value);
+      return result
+    }
+    const result = JSON.parse(value);
     return result;
   }
 

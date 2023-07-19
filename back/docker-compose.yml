@@ -7,6 +7,11 @@ services:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME}
-    container_name: paginacion
+    container_name: postgres
     volumes:
       - ./data:/var/lib/postgresql/data
+  cache:
+    image: redis:latest
+    ports:
+      - 6379:6379
+    container_name: redis

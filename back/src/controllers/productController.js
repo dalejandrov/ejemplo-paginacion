@@ -1,6 +1,15 @@
 import ProductService from '../services/productService.js';
 
 export class ProductController {
+
+  // static async getAllProducts(req, res) {
+  //   const { page, pageSize } = req.query;
+
+  //   const products = await ProductService.getAllProducts(page, pageSize);
+  //   res.json(products);
+  // }
+
+  // ! Sin Cache
   static async getAllProducts(req, res) {
     const products = await ProductService.getAllProducts();
     res.json({
