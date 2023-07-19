@@ -93,6 +93,9 @@ psql -U nombre_de_usuario -d nombre_de_la_base_de_datos
 Recuerda que estos comandos se ejecutan en la terminal después de haber iniciado una sesión de PostgreSQL utilizando psql. Asegúrate de tener PostgreSQL instalado en tu sistema y haber configurado las variables de entorno adecuadas para poder ejecutar estos comandos.
 
 #### db
+
+Alternativas a fakeData, https://www.mockaroo.com/
+
 ```sql
 CREATE TABLE
     products (
