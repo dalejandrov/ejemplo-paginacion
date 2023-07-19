@@ -3,7 +3,7 @@ import { Loading } from '../components/loading';
 import { usePokemon } from '../hooks/usePokemon'
 import { Pokemon } from '../interfaces/fetchAllPokemonResponse';
 
-function HomePage() {
+function PokemonPage() {
 
   const { isLoading, pokemons } = usePokemon();
   const [currentPage, setCurrentPage] = useState(0);
@@ -97,4 +97,4 @@ function HomePage() {
   )
 }
 
-export default HomePage
+export default PokemonPage

@@ -3,7 +3,7 @@
 // import viteLogo from '/vite.svg'
 // import './App.css'
 
-import HomePage from './pages/homePage'
+import PokemonPage from './pages/pokemonPage'
 import ProductsPage from './pages/productsPage'
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
   return (
     <>
       <ProductsPage />
+      {/* <PokemonPage /> */}
     </>
   )
 }
