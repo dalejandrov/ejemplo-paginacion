@@ -26,7 +26,7 @@ docker exec -it nombre_o_id_del_contenedor bash
 psql -U usuario -d basededatos
 ```
 
-o tambie:
+o tambien:
 ```shell
 docker exec -it nombre_o_id_del_contenedor psql -U usuario -d basededatos
 ```
@@ -60,35 +60,34 @@ psql -d nombre_de_la_base_de_datos
 
 
 3. Listar tablas en la base de datos actual:
+```shell
 \dt
+```
 
-
-Mostrar usuarios:
-
-
+4. Mostrar usuarios:
+```shell
 \du
+```
 
-
-Crear un nuevo usuario:
-
-
-
+5. Crear un nuevo usuario:
+```shell
 CREATE USER nombre_de_usuario WITH PASSWORD 'contraseña';
+```
 
-Cambiar la contraseña de un usuario existente:
-
-
+6. Cambiar la contraseña de un usuario existente:
+```shell
 ALTER USER nombre_de_usuario WITH PASSWORD 'nueva_contraseña';
+```
 
-Conectarse como usuario específico:
-
-
+7. Conectarse como usuario específico:
+```shell
 psql -U nombre_de_usuario -d nombre_de_la_base_de_datos
+```
 
-Salir de la terminal de PostgreSQL:
-
-
+8. Salir de la terminal de PostgreSQL:
+```shell
 \q
+```
 
 
 Recuerda que estos comandos se ejecutan en la terminal después de haber iniciado una sesión de PostgreSQL utilizando psql. Asegúrate de tener PostgreSQL instalado en tu sistema y haber configurado las variables de entorno adecuadas para poder ejecutar estos comandos.
@@ -96,12 +95,6 @@ Recuerda que estos comandos se ejecutan en la terminal después de haber iniciad
 
 db
 ```sql
-SELECT * FROM products;
-ALTER TABLE products
-ALTER COLUMN
-    price TYPE INTEGER USING price :: INTEGER;
-ALTER TABLE products ADD COLUMN image VARCHAR;
-drop table products;
 CREATE TABLE
     products (
         id SERIAL PRIMARY KEY,
@@ -110,4 +103,11 @@ CREATE TABLE
         price DECIMAL(8, 2),
         image VARCHAR(255)
     );
+SELECT * FROM products;
+/////////////////////////////////////////////////////
+ALTER TABLE products
+ALTER COLUMN
+    price TYPE INTEGER USING price :: INTEGER;
+ALTER TABLE products ADD COLUMN image VARCHAR;
+drop table products;
 ```
